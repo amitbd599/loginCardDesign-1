@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --theme-color: #eeff03;
+  --text-color: #9b9b9b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.login__section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 9;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  background-image: url("./asset/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login__section::before {
+  position: absolute;
+  content: "";
+  background: #00000098;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+.login__section .inner__container {
+  padding: 30px;
+  position: static;
+  max-width: 1280px;
+  padding: 0px 30px;
+  margin: 0 auto;
+  width: 100%;
+}
+.login__section .inner__container .wrapper {
+  display: block;
+  padding: 30px;
+  border-radius: 10px;
+}
+.login__section .inner__container .wrapper nav {
+  display: flex;
+  justify-content: space-between;
+}
+.login__section .inner__container .wrapper nav .logo img {
+  width: 200px;
+}
+.login__section .inner__container .wrapper nav ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+.login__section .inner__container .wrapper nav ul {
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+.login__section .inner__container .wrapper nav ul a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s linear;
+}
+.login__section .inner__container .wrapper nav ul a:hover {
+  color: var(--theme-color);
+}
+
+.login__section .inner__container .form__section {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 700px;
+}
+.login__section .inner__container .form__section .info p:first-child {
+  font-size: 18px;
+  color: var(--text-color);
+}
+.login__section .inner__container .form__section .info h2 {
+  font-size: 50px;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+.login__section .inner__container .form__section .info p:last-child {
+  font-size: 14px;
+  color: var(--text-color);
+}
+.login__section .inner__container .form__section .info p:last-child .shape {
+  font-size: 14px;
+  color: var(--theme-color);
+}
+.login__section .inner__container .form__section form {
+  margin-top: 40px;
+}
+.login__section .inner__container .form__section form .form__wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.login__section .inner__container .form__section .form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+}
+.login__section .inner__container .form__section .form__group.full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.login__section .inner__container .form__section .form__field {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 10px 0;
+  background: transparent;
+  transition: border-color 0.2s linear;
+}
+
+.login__section .inner__container .form__section .form__field::placeholder {
+  color: transparent;
+}
+
+.login__section
+  .inner__container
+  .form__section
+  .form__field:placeholder-shown
+  ~ .form__label {
+  font-size: 15px;
+  cursor: text;
+  top: 20px;
+}
+
+.login__section .inner__container .form__section .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 15px;
+  color: var(--text-color);
+  pointer-events: none;
+}
+
+.login__section .inner__container .form__section .form__field:focus {
+  font-weight: 500;
+  border-width: 1px;
+  border-color: var(--theme-color);
+  border-image-slice: 1;
+}
+
+.login__section
+  .inner__container
+  .form__section
+  .form__field:focus
+  ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: all 0.3s;
+  font-size: 15px;
+  color: var(--theme-color);
+  font-weight: 500;
+}
+
+.login__section .inner__container .form__section .form__field:required,
+.login__section .inner__container .form__section .form__field:invalid {
+  box-shadow: none;
+}
+
+.login__section .inner__container .form__section form .my__btn {
+  margin-top: 30px;
+  padding: 0.8em 1.8em;
+  border: 2px solid var(--theme-color);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: var(--theme-color);
+  cursor: pointer;
+}
+
+.login__section .inner__container .form__section form .my__btn::before {
+  content: "";
+  width: 0;
+  height: 600%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--theme-color);
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.login__section .inner__container .form__section form .my__btn:hover::before {
+  width: 105%;
+}
+
+.login__section .inner__container .form__section form .my__btn:hover {
+  color: #111;
+}
